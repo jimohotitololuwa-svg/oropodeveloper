@@ -1,0 +1,12 @@
+(function(){var $=function(s,r){return(r||document).querySelector(s)},$$=function(s,r){return[].slice.call((r||document).querySelectorAll(s))};
+var top=$('.top'),b=$('.burger'),m=$('.menu');
+b.addEventListener('click',function(){var o=m.classList.toggle('open');b.setAttribute('aria-expanded',o);document.body.style.overflow=o?'hidden':''});
+$$('.menu a').forEach(function(a){a.addEventListener('click',function(){m.classList.remove('open');b.setAttribute('aria-expanded','false');document.body.style.overflow=''})});
+var sc=function(){top.classList.toggle('scrolled',scrollY>8)};addEventListener('scroll',sc,{passive:true});sc();
+$$('[data-scroll]').forEach(function(btn){btn.addEventListener('click',function(){var s=document.getElementById(btn.dataset.target);s.scrollBy({left:btn.dataset.scroll*Math.min(440,s.clientWidth*.8),behavior:'smooth'})})});
+$$('[data-open]').forEach(function(t){t.addEventListener('click',function(){document.getElementById(t.dataset.open).showModal()})});
+$$('dialog').forEach(function(d){d.addEventListener('click',function(e){if(e.target===d)d.close()})});
+var f=$('#contactForm');if(f)f.addEventListener('submit',function(e){e.preventDefault();var v=function(i){return($('#'+i).value||'').trim()};
+location.href='mailto:info@oropovisionarycoaching.com?subject='+encodeURIComponent('Message from '+v('Name'))+'&body='+encodeURIComponent('Name: '+v('Name')+'\nEmail: '+v('Email')+'\nPhone: '+v('Phone')+'\nOrganisation: '+v('Company')+'\n\n'+v('message'))});
+if(!matchMedia('(prefers-reduced-motion: reduce)').matches&&'IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+$$('.head,.card,.prog,.way,.step,.quote,.member,.cta,details,.formbox,.split>*,.feat>*,.sponsor>*,.strip img').forEach(function(el){el.classList.add('rv');io.observe(el)})}})();

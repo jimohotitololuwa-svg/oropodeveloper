@@ -1,0 +1,28 @@
+/* Partner enquiry form */
+.pf-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(2rem,6vw,5rem);align-items:start}
+.pf-side{position:sticky;top:120px}
+.pf-steps{margin-top:2rem;display:grid;gap:1.4rem}
+.pf-steps li{display:flex;gap:1rem;align-items:flex-start;color:var(--muted);font-size:.97rem}
+.pf-steps b{flex:none;display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--yellow);color:var(--navy);font-size:1.05rem}
+.pf-steps strong{display:block;color:var(--navy);font-size:1.05rem}
+.pf-alt{margin-top:2rem;color:var(--muted);font-size:.95rem}.pf-alt a{color:var(--navy);font-weight:700;border-bottom:2px solid var(--yellow)}
+.pf-box{border-top:6px solid var(--yellow);position:relative}
+select{font:inherit;font-weight:400;padding:.95rem 1.1rem;border:1.5px solid transparent;border-radius:14px;background:#fff;color:var(--ink);width:100%;appearance:none;cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9'%3E%3Cpath d='M1 1l6 6 6-6' fill='none' stroke='%23002147' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1.1rem center;padding-right:2.6rem}
+select:focus{outline:0;border-color:var(--navy)}
+.pf-count{align-self:flex-end;font-weight:500;font-size:.8rem;color:var(--mist)}
+.pf-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.pf-check{flex-direction:row;align-items:flex-start;gap:.7rem;font-weight:500;color:var(--ink)}
+.pf-check input{width:20px;height:20px;margin-top:.2rem;accent-color:var(--navy);flex:none;padding:0}
+.pf-actions{display:flex;flex-wrap:wrap;align-items:center;gap:1rem 1.4rem}
+.pf-actions .btn[disabled]{opacity:.7;cursor:progress;transform:none;box-shadow:none}
+.pf-actions .btn.loading i{display:none}
+.pf-actions .btn.loading::after{content:"";width:18px;height:18px;border-radius:50%;border:3px solid rgba(0,33,71,.25);border-top-color:var(--navy);animation:pfspin .7s linear infinite}
+@keyframes pfspin{to{transform:rotate(360deg)}}
+.pf-status{font-weight:600;font-size:.95rem;margin:0}.pf-status.err{color:#b3261e}.pf-status.ok{color:#1b6b3a}
+.pf-err{border-color:#b3261e !important}
+.pf-field-msg{color:#b3261e;font-weight:600;font-size:.8rem}
+.pf-done{text-align:center;padding:clamp(2rem,6vw,4rem) 1rem;display:grid;gap:1rem;justify-items:center}
+.pf-done[hidden]{display:none}
+.pf-done i{font-size:4.5rem;color:var(--navy);background:var(--yellow);border-radius:50%;width:92px;height:92px;display:grid;place-items:center}
+.pf-done p{color:var(--muted);max-width:36ch}
+@media(max-width:860px){.pf-grid{grid-template-columns:1fr}.pf-side{position:static}}

@@ -1,0 +1,414 @@
+:root {
+    --primary-color: #002147;
+    --secondary-color: #F2CC03;
+    --background-color: #687BA8;
+    --base-color: #F1F3FF;
+    --text-color: #081535;
+    --transition: 0.2s ease-in-out;
+    --box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.2),
+                -4px -4px 7px rgba(255, 255, 255, 0.6);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+.main {
+    margin-top: 80px;
+}
+
+/* Image Slider */
+.slide {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 900px;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-color);
+    background-color: var(--base-color);
+}
+
+.slide span {
+    position: absolute;
+    top: 5%;
+    color: var(--primary-color);
+    text-align: center;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-size: 42px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 46px; /* 109.524% */
+}
+
+.slider-container {
+    display: flex;
+    width: 900px;
+    max-width: 100vw;
+    height: 600px;
+    position: relative;
+    overflow: hidden;
+    background-color: #081535;
+}
+
+.slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    display: flex;
+    width: max-content;
+    transition: 1s;
+}
+
+.slider img {
+    width: 900px;
+    max-width: 100vw;
+    height: 100%;
+    object-fit: cover;
+}
+
+.buttons {
+    position: absolute;
+    top: 45%;
+    left: 5%;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.buttons button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #fff5;
+    color: #fff;
+    border: none;
+    font-family: monospace;
+    font-weight: bold;
+}
+
+.dots {
+    position: absolute;
+    bottom: 10px;
+    color: #fff;
+    left: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.dots li {
+    list-style: none;
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    margin: 20px;
+    border-radius: 20px;
+    transition: 1s;
+}
+
+.dots li.active-dot {
+    width: 30px;
+}
+
+/* CALL TO ACTION 1 */
+.CTA {
+    position: relative;
+    height: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.CTA__container {
+    height: fit-content;
+    width: 100%;
+    background-color: var(--primary-color);
+    display: grid;
+    grid-template-columns: 50% 50%;
+    border-radius: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.reverse {
+    order: -1;
+}
+
+.CTA__container .CTA_info {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 3rem;
+    gap: 20px;
+    color: white;
+}
+
+.CTA__container .CTA_info h1 {
+    font-size: 56px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 66px;
+}
+
+.CTA__container .CTA_info .CTA_body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding-left: 24px;
+    border-left: 5px solid var(--secondary-color);
+}
+
+.CTA__container .CTA_info .CTA_body .CTA_description{
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px;
+    margin-bottom: 1rem;
+}
+
+.CTA_body .CTA_apply {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 4px;
+    background-color: var(--secondary-color);
+    border: none;
+    color: var(--primary-color);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 18px;
+}
+
+.CTA_img {
+    height: 100%;
+    width: 100%;
+    padding: 40px;
+}
+
+.CTA_img img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+/* Media Queries */
+
+/* Media Query for low resolution  Tablets, Ipads */
+@media (min-width: 320px) and (max-width: 767px) {
+
+    .slide {
+        height: 400px;
+        gap: 20px;
+    }
+
+    .slide span {
+        position: relative;
+        color: var(--primary-color);
+        text-align: center;
+        font-feature-settings: 'clig' off, 'liga' off;
+        font-size: 28px;
+        font-style: normal;
+        font-weight: 900;
+        line-height: 46px; /* 109.524% */
+    }
+
+    .slider-container {
+        display: flex;
+        width: 100%;
+        max-width: 100%;
+        height: 300px;
+        position: relative;
+        overflow: hidden;
+        background-color: #081535;
+    }
+
+    .slider img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .section {
+        padding: 0px 3%;
+    }
+
+    .CTA {
+        height: 100%;
+        background-color: var(--primary-color);
+        width: 100%;
+    }
+
+    .CTA__container {
+        display: flex;
+        flex-direction: column-reverse;
+        grid-template-columns: 0;
+        border-radius: 0px;
+        align-items: center;
+        justify-content: center;
+        gap: 0;
+        margin: 30px 0px;
+        /* background-color: red; */
+    }
+
+    .img-top {
+        display: flex;
+        flex-direction: column;
+        grid-template-columns: 0;
+        border-radius: 0px;
+        align-items: center;
+        justify-content: center;
+        gap: 0;
+        margin: 30px 0px;
+    }
+
+    .CTA__container .CTA_info {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding: 0px 0px;
+        gap: 5px;
+        color: white;
+    }
+
+    .CTA__container .CTA_info h1 {
+        font-size: 30px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 60px;
+    }
+
+    .CTA__container .CTA_info .CTA_body .CTA_description{
+        font-size: 11px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 18px;
+        margin-bottom: 1rem;
+    }
+
+    .CTA_img {
+        height: 100%;
+        width: 100%;
+        padding: 0px 0px;
+    }
+
+}
+ 
+/* Media Query for Tablets Ipads portrait mode */
+@media (min-width: 768px) and (max-width: 1024px){
+
+    .slide {
+        height: 600px;
+    }
+
+    .slider-container {
+        display: flex;
+        margin: auto;
+        height: 400px;
+        width: 550px;
+        max-width: 100vw;
+        overflow: hidden;
+        position: relative;
+        border-radius: 12px;
+    }
+
+    .CTA {
+        height: 500px;
+    }
+
+    .CTA__container .CTA_info {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding: 1.2rem;
+        gap: 10px;
+        color: white;
+    }
+
+    .CTA__container .CTA_info h1 {
+        font-size: 40px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 60px;
+    }
+
+    .CTA__container .CTA_info .CTA_body .CTA_description{
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 20px;
+        margin-bottom: 1rem;
+    }
+
+}
+ 
+/* Media Query for Laptops and Desktops */
+@media (min-width: 1024px) and (max-width: 1366px){
+    .slide {
+        height: 700px;
+    }
+
+    .slider-container {
+        display: flex;
+        margin: auto;
+        height: 500px;
+        width: 700px;
+        max-width: 100vw;
+        overflow: hidden;
+        position: relative;
+        border-radius: 12px;
+    }
+
+    .CTA {
+        height: 500px;
+    }
+
+    .CTA__container .CTA_info {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding: 2rem;
+        gap: 20px;
+        color: white;
+    }
+
+    .CTA__container .CTA_info h1 {
+        font-size: 48px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 60px;
+    }
+
+    .CTA__container .CTA_info .CTA_body .CTA_description{
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 22px;
+        margin-bottom: 1rem;
+    }
+
+}
+ 
+/* Media Query for Large screens */
+@media (min-width: 1367px) {
+
+}
